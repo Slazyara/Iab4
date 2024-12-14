@@ -9,4 +9,3 @@ json_file = 'schedule.json'
 yaml_file = 'schedule1dop.yaml'
 convert_json_to_yaml(json_file, yaml_file)
 print(f'Конвертация завершена: {json_file} -> {yaml_file}')
-
