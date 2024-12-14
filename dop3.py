@@ -3,16 +3,16 @@ def parcing(data, space=0):
 
     yaml = ""
 
-    if type(data) is list:
-        for item in data:
-            yaml += " " * space + "- " + str(item) + "\n"
     if type(data) is dict:
         for key, value in data.items():
             yaml += " " * space + str(key) + ":"
-            if type(value) in (dict, list):
+            if type(value) is list or type(value) is dict:
                 yaml += "\n" + parcing(value, space + 2)
             else:
                 yaml += " " + str(value) + "\n"
+    elif type(data) is list:
+        for item in data:
+            yaml += " " * space + "- " + str(item) + "\n"
     else:
         yaml += " " * space + str(data) + "\n"
 
